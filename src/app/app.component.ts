@@ -29,4 +29,18 @@ export class AppComponent {
       priority: 5 
     }
   ];
+
+
+  addTodo(newTodoLabel: any) {
+    var newTodo = {
+      label: newTodoLabel,
+      priority: 1,
+      done: false
+    };
+    this.todos.push(newTodo);
+  }
+
+  deleteTodo(todo: any) {
+    this.todos = this.todos.filter(t => t.label !== todo.label);
+  }
 }
